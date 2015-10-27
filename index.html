@@ -6,17 +6,19 @@
 	</head>
 	<body>
 
-		<div id="lightbox">
-			<div id="image-container">
-				<div><img src="cupcake.jpg"></div>
-				<div><img src="cupcake.jpg"></div>
-				<div><img src="cupcake.jpg"></div>
-				<div><img src="cupcake.jpg"></div>	
-				<div><img src="cupcake.jpg"></div>
-				<div><img src="cupcake.jpg"></div>											
-			</div>
-			<div id="text-container">
-				Cupcake ipsum dolor sit amet biscuit sugar plum liquorice. Danish halvah oat cake marshmallow donut candy macaroon. Chocolate muffin marzipan tart icing. Wafer tootsie roll topping tootsie roll cake powder candy canes ice cream. Cotton candy tiramisu gummies carrot cake tootsie roll sweet roll dessert. Brownie chocolate danish dessert lollipop candy. Sweet wafer gummi bears. Carrot cake jelly-o icing brownie chocolate cheesecake dessert biscuit. Lemon drops halvah donut sweet roll jelly lollipop chupa chups cookie fruitcake. 
+		<div id="viewport">
+			<div id="lightbox">
+				<div id="image-container">
+					<div><img src="cupcake.jpg"></div>
+					<div><img src="cupcake.jpg"></div>
+					<div><img src="cupcake.jpg"></div>
+					<div><img src="cupcake.jpg"></div>	
+					<div><img src="cupcake.jpg"></div>
+					<div><img src="cupcake.jpg"></div>											
+				</div>
+				<div id="text-container">
+					Cupcake ipsum dolor sit amet biscuit sugar plum liquorice. Danish halvah oat cake marshmallow donut candy macaroon. Chocolate muffin marzipan tart icing. Wafer tootsie roll topping tootsie roll cake powder candy canes ice cream. Cotton candy tiramisu gummies carrot cake tootsie roll sweet roll dessert. Brownie chocolate danish dessert lollipop candy. Sweet wafer gummi bears. Carrot cake jelly-o icing brownie chocolate cheesecake dessert biscuit. Lemon drops halvah donut sweet roll jelly lollipop chupa chups cookie fruitcake. 
+				</div>
 			</div>
 		</div>
 
@@ -26,12 +28,9 @@
 
 			window.onload = window.onresize = window.onscroll = function() {
 				var topWidth = window.innerWidth * .8;
-				var scrollPos = document.documentElement.scrollTop || document.body.scrollTop;
-				var viewportHeight = window.innerHeight;
-				var lightboxHeight = lightbox.clientHeight;
+				var scrollPos = window.pageYOffset;
 
-				lightbox.style.width = topWidth * (1 - scrollPos / 2000) + 'px';
-				lightbox.style.top = scrollPos + viewportHeight / 2 - lightboxHeight / 2 + 'px';
+				lightbox.style.width = topWidth * (1 - (scrollPos + window.innerHeight / 2) / 2000) + 'px';
 			}
 		</script>
 	</body>
