@@ -24,13 +24,11 @@
 
 
 		<script type="text/javascript">
-			var lightbox = document.getElementById('lightbox');
-
-			window.onload = window.onresize = window.onscroll = function() {
+			window.onresize = window.onscroll = function() {
 				var topWidth = window.innerWidth * .8;
 				var scrollPos = window.pageYOffset;
 
-				lightbox.style.width = topWidth * (1 - (scrollPos + window.innerHeight / 2) / 2000) + 'px';
+				document.getElementById('lightbox').style.width = topWidth * (1 - scrollPos / 2000) + 'px';
 			}
 		</script>
 	</body>
